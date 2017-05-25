@@ -6,7 +6,7 @@
         "created_at": {
             "$date": "2017-05-25T16:02:22"
         },
-		"updated_at": {
+	"updated_at": {
             "$date": "2017-05-25T16:22:54"
         },
         "fetch": [
