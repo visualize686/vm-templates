@@ -1,0 +1,48 @@
+{
+    "template": {
+        "name": "fedora-23-server", 
+        "author": "Wojciech Kloska <shangteus@ixsystems.com>", 
+        "description": "Fedora Release 23 - Server version", 
+        "created_at": {
+            "$date": "2016-05-25T22:02:32"
+        }, 
+        "updated_at": {
+            "$date": "2017-01-08T16:22:54"
+        }, 
+        "files": true, 
+        "fetch": [
+            {
+                "name": "os", 
+                "url": "http://download.freenas.org/vm-templates/fedora-23-server/os.img.gz", 
+                "sha256": "fed7971d05b805b13580beafd323c53d8748aa26cdd336b0d85a3751052b6f73", 
+                "size": 571166696
+            }
+        ]
+    }, 
+    "config": {
+        "ncpus": 1, 
+        "bootloader": "GRUB", 
+        "memsize": 1024,
+        "minmemsize": 512,
+        "boot_directory": "grub"
+    }, 
+    "devices": [
+        {
+            "type": "NIC", 
+            "name": "nic", 
+            "properties": {
+                "mode": "NAT"
+            }
+        }, 
+        {
+            "type": "DISK", 
+            "name": "os", 
+            "properties": {
+                "size": 17179869184, 
+                "mode": "AHCI", 
+                "source": "os"
+            }
+        }
+    ], 
+    "guest_type": "linux64"
+}

@@ -1,0 +1,58 @@
+{
+    "template": {
+        "name": "trueos-desktop-12",
+        "author": "Suraj Ravichandran <suraj@ixsystems.com>",
+        "description": "TrueOS 12 (formerly PC-BSD) Desktop Version with VNC session started automatically",
+        "created_at": {
+            "$date": "2016-09-12T08:15:00"
+        },
+        "updated_at": {
+            "$date": "2017-01-08T16:22:54"
+        },
+        "fetch": [
+            {
+                "name": "os",
+                "url": "http://download.freenas.org/vm-templates/trueos-desktop-12/os.img.gz",
+                "sha256": "06bed8b7f572e310faeeb5d478547d5e08cdeb51e7bd4ed18b2ba0ac06789719",
+                "size": 2054240256
+            }
+        ]
+    },
+    "config": {
+        "ncpus": 2,
+        "bootloader": "UEFI",
+        "memsize": 2048,
+        "minmemsize": 1024,
+        "boot_device": "os"
+    },
+    "devices": [
+        {
+            "type": "DISK",
+            "name": "os",
+            "properties": {
+                "size": 17179869184,
+                "mode": "VIRTIO",
+                "source": "os"
+            }
+        },
+        {
+            "type": "NIC",
+            "name": "nic",
+            "properties": {
+                "mode": "BRIDGED",
+                "device": "E1000",
+                "bridge": "default"
+            }
+        },
+        {
+            "type": "GRAPHICS",
+            "name": "framebuffer",
+            "properties": {
+                "resolution": "1024x768",
+                "vnc_enabled": true,
+                "vnc_port": 6666
+            }
+        }
+    ],
+    "guest_type": "freebsd64"
+}

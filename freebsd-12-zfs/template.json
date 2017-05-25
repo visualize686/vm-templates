@@ -1,0 +1,49 @@
+{
+    "template": {
+        "name": "freebsd-12-zfs", 
+        "author": "Jordan Hubbard <jkh@ixsystems.com>", 
+        "description": "FreeBSD 12.0-20160809-r303880 image with root on ZFS", 
+        "created_at": {
+            "$date": "2016-09-11T10:52:00"
+        }, 
+        "updated_at": {
+            "$date": "2017-01-08T16:22:54"
+        }, 
+        "fetch": [
+            {
+                "name": "os", 
+                "url": "http://download.freenas.org/vm-templates/freebsd-12-zfs/os.img.gz", 
+                "sha256": "c6f8070f23b550009b28b73af8f3478b381e8d951dc5353b5277dad9291bb487",
+                "size": 1657015858
+            }
+        ]
+    }, 
+    "config": {
+        "ncpus": 1,
+        "bootloader": "BHYVELOAD", 
+        "memsize": 1024,
+        "minmemsize": 512,
+        "boot_device": "os"
+    }, 
+    "devices": [
+        {
+            "type": "DISK", 
+            "name": "os", 
+            "properties": {
+                "size": 10737418240,
+                "mode": "VIRTIO", 
+                "source": "os"
+            }
+        }, 
+        {
+            "type": "NIC", 
+            "name": "nic", 
+            "properties": {
+                "mode": "BRIDGED",
+                "bridge": "default",
+                "device": "VIRTIO"
+            }
+        }
+    ], 
+    "guest_type": "freebsd64"
+}
