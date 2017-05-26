@@ -1,6 +1,6 @@
 {
     "template": {
-        "name": "my-ubuntu-16-temp", 
+        "name": "my-ubuntu-16-ext-http", 
         "author": "Niklas Welter <niklaswelter@gmail.com>", 
         "description": "Ubuntu Server 16.04 with VNC session started automatically", 
         "created_at": {
@@ -31,7 +31,7 @@
             "type": "DISK", 
             "name": "os", 
             "properties": {
-                "size": 600179869184, 
+                "size": 584115552256, 
                 "mode": "AHCI", 
                 "source": "os"
             }
