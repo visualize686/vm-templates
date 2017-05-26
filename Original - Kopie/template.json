@@ -1,0 +1,49 @@
+{
+    "template": {
+        "name": "my-ubuntu-http", 
+        "author": "nick", 
+        "description": "Ubuntu Server 16.04 with VNC session started automatically", 
+        "created_at": {
+            "$date": "2016-05-26T14:02:22"
+        }, 
+        "updated_at": {
+            "$date": "2017-05-08T16:22:54"
+        }, 
+        "fetch": [
+            {
+                "name": "os", 
+                "url": "http://192.168.178.58/os.img.gz", 
+                "sha256": "ba04939c90f07f8b6a1b6e4d2c64ffb27ae3a9f8c062a983ae984b9489932653",
+                "size": 1763000308
+            }
+        ]
+    }, 
+    "config": {
+        "ncpus": 6, 
+        "bootloader": "GRUB", 
+        "memsize": 6144,
+        "minmemsize": 1024,
+        "boot_device": "os", 
+        "boot_partition": "msdos1"
+    }, 
+    "devices": [
+        {
+            "type": "DISK", 
+            "name": "os", 
+            "properties": {
+                "size": 600179869184, 
+                "mode": "AHCI", 
+                "source": "os"
+            }
+        }, 
+        {
+            "type": "NIC", 
+            "name": "nic", 
+            "properties": {
+                "mode": "BRIDGED", 
+                "bridge": "default"
+            }
+        }
+    ], 
+    "guest_type": "linux64"
+}
