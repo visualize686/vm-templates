@@ -7,14 +7,14 @@
             "$date": "2017-05-25T16:02:22"
         },
 	"updated_at": {
-            "$date": "2017-05-26T16:22:54"
+            "$date": "2017-05-27T16:22:54"
         },
         "fetch": [
             {
                 "name": "os", 
                 "url": "http://download.freenas.org/vm-templates/ubuntu-server-16.04-vnc/os.img.gz", 
                 "sha256": "d73224e26e28f711fc3ecbddae2cfff194be9dd1974e3a644b30e56fb6422788",
-                "size": 1321161313
+                "size": 584115552256
             }
 	]
     }, 
